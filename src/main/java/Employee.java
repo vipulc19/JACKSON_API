@@ -1,3 +1,4 @@
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
 
 import java.io.Serializable;
@@ -11,6 +12,7 @@ public class Employee implements Serializable
 {
 	private int empno;
 	private String name;
+	@JsonIgnore
 	private double salary;
 
 
