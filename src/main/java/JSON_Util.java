@@ -1,3 +1,4 @@
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
@@ -19,15 +20,23 @@ public class JSON_Util
 		}
 		return json_result;
 	}
-	public static <T> T convertJsontoJava(String jason_string, Class<T> cls)
+	public static <T> T convertJsontoJava(String json_string, Class<T> cls)
 	{
 		T result=null;
 		try {
-			result = mapper.readValue(jason_string,cls);
+			result = mapper.readValue(json_string,cls);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return result;
 	}
+
+	public static String convert(String json_string) throws IOException		//JSON_NODE -- readTree
+	{
+		JsonNode jsonNode=mapper.readTree(json_string);
+		return jsonNode.get("empno").asText();
+
+	}
+
 
 }
