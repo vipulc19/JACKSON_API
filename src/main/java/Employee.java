@@ -1,18 +1,25 @@
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
 import java.io.Serializable;
+
+@JsonPropertyOrder(value = {
+	"name",
+	"empno",
+	"salary"})
 
 public class Employee implements Serializable
 {
-	private int EMPNO;
+	private int empno;
 	private String name;
 	private double salary;
 
 
 	public int getEMPNO() {
-		return EMPNO;
+		return empno;
 	}
 
 	public void setEMPNO(int EMPNO) {
-		this.EMPNO = EMPNO;
+		this.empno = EMPNO;
 	}
 
 	public String getName() {
