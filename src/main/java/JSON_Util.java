@@ -20,7 +20,7 @@ public class JSON_Util
 		}
 		return json_result;
 	}
-	public static <T> T convertJsontoJava(String json_string, Class<T> cls)
+	public static <T> T convertJSONtoObject(String json_string, Class<T> cls)
 	{
 		T result=null;
 		try {
@@ -31,7 +31,7 @@ public class JSON_Util
 		return result;
 	}
 
-	public static String convert(String json_string) throws IOException		//JSON_NODE -- readTree
+	public static String readJSONTree(String json_string) throws IOException		//JSON_NODE -- readTree
 	{
 		JsonNode jsonNode=mapper.readTree(json_string);
 		return jsonNode.get("empno").asText();

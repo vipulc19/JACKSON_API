@@ -1,6 +1,3 @@
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
-
 import java.io.IOException;
 
 public class Test
@@ -14,12 +11,12 @@ public class Test
 
 		//Conversions:
 		String jsonEmployee=JSON_Util.convertJavatoJason(e);
-		Employee emp=JSON_Util.convertJsontoJava(jsonEmployee,Employee.class);
+		Employee emp=JSON_Util.convertJSONtoObject(jsonEmployee,Employee.class);
 		System.out.println(jsonEmployee);
 		System.out.println();
 		System.out.println(emp.getEMPNO()+"\t"+emp.getName()+"\t"+emp.getSalary());
 
-		System.out.println(JSON_Util.convert(jsonEmployee));
+		System.out.println(JSON_Util.readJSONTree(jsonEmployee));
 
 
 	}
