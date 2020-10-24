@@ -4,39 +4,46 @@ import org.codehaus.jackson.annotate.JsonPropertyOrder;
 import java.io.Serializable;
 
 @JsonPropertyOrder(value = {
-	"name",
-	"empno",
-	"salary"})
+        "name",
+        "empno",
+        "salary"})
 
-public class Employee implements Serializable
-{
-	private int empno;
-	private String name;
-	@JsonIgnore
-	private double salary;
+public class Employee implements Serializable {
+    private int empno;
+    private String name;
+    @JsonIgnore
+    private double salary;
+    private double age;
 
+    public double getAge() {
+        return age;
+    }
 
-	public int getEMPNO() {
-		return empno;
-	}
+    public void setAge(double age) {
+        this.age = age;
+    }
 
-	public void setEMPNO(int EMPNO) {
-		this.empno = EMPNO;
-	}
+    public int getEMPNO() {
+        return empno;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setEMPNO(int EMPNO) {
+        this.empno = EMPNO;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public double getSalary() {
-		return salary;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 }
